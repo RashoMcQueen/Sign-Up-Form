@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  background-image: url(img/mona-eendra-vC8wj_Kphak-unsplash.jpg);
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 35%;
+}
