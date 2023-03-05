@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="Fonts/Norse-Bold.otf" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,10 +15,68 @@
     <title>Document</title>
   </head>
   <body>
-    <section class="section-form">
-      <div class="main">
-        <div class="left">We</div>
-        <div class="right">Bos</div>
+    <section class="main">
+      <div class="left">
+        <div class="logo">
+          <a href="#"
+            ><img src="img/logo.png" alt="Odin logo" class="logo-img"
+          /></a>
+          <p>Odin</p>
+        </div>
+        <div class="img-credits">
+          <p>
+            Photo by
+            <a href="https://unsplash.com/@monaeendra">Mona Eendra</a> on
+            <a href="https://unsplash.com/">Unsplash</a>
+          </p>
+        </div>
+      </div>
+      <div class="right">
+        <div class="part-1">
+          <p>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams. Sign up
+            <em>now</em> to get started.
+          </p>
+          <p>You <em>know</em> you want to.</p>
+        </div>
+        <div class="part-2">
+          <h2>Let's do this!</h2>
+          <form action="" method="get">
+            <fieldset>
+              <div class="form-container">
+                <div class="form-field">
+                  <label for="first_name">First Name </label>
+                  <input type="text" name="first_name" id="name_name" />
+                </div>
+                <div class="form-field">
+                  <label for="last_name">Last Name </label>
+                  <input type="text" name="last_name" id="last_name" />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" />
+                </div>
+                <div class="form-field">
+                  <label for="phone_number">Phone Number</label>
+                  <input type="number" name="phone_number" id="phone_number" />
+                </div>
+                <div class="form-field">
+                  <label for="pwd">Password</label>
+                  <input type="password" name="pwd" id="pwd" />
+                </div>
+                <div class="form-field">
+                  <label for="pwd2">Confirm Password</label>
+                  <input type="password" name="pwd2" id="pwd2" />
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <button>Create Account</button>
+              <p>Alredy have an account? <a href="#">Log in</a></p>
+            </fieldset>
+          </form>
+        </div>
       </div>
     </section>
   </body>
