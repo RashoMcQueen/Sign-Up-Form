@@ -12,7 +12,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Sign Up</title>
   </head>
   <body>
     <section class="main">
@@ -21,7 +21,7 @@
           <a href="#"
             ><img src="img/logo.png" alt="Odin logo" class="logo-img"
           /></a>
-          <p>Odin</p>
+          <p>Paw</p>
         </div>
         <div class="img-credits">
           <p>
@@ -35,49 +35,195 @@
         <div class="part-1">
           <p>
             This is not a real online service! You know you need something like
-            this in your life to help you realize your deepest dreams. Sign up
-            <em>now</em> to get started.
+            <br />
+            this in your life to help you realize your deepest dreams. <br />
+            Sign up <em>now</em> to get started.
           </p>
           <p>You <em>know</em> you want to.</p>
         </div>
         <div class="part-2">
-          <h2>Let's do this!</h2>
-          <form action="" method="get">
-            <fieldset>
-              <div class="form-container">
-                <div class="form-field">
+          <form class="form1" action="" method="post">
+            <h2>Let's do this!</h2>
+            <div class="form-container">
+              <div class="form-field">
+                <div class="input-field">
                   <label for="first_name">First Name </label>
-                  <input type="text" name="first_name" id="name_name" />
+                  <input
+                    type="text"
+                    name="first_name"
+                    id="first_name"
+                    maxlength="25"
+                    required
+                  />
+                  <span class="error"></span>
                 </div>
-                <div class="form-field">
+                <div class="input-field">
                   <label for="last_name">Last Name </label>
-                  <input type="text" name="last_name" id="last_name" />
-                </div>
-                <div class="form-field">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" />
-                </div>
-                <div class="form-field">
-                  <label for="phone_number">Phone Number</label>
-                  <input type="number" name="phone_number" id="phone_number" />
-                </div>
-                <div class="form-field">
-                  <label for="pwd">Password</label>
-                  <input type="password" name="pwd" id="pwd" />
-                </div>
-                <div class="form-field">
-                  <label for="pwd2">Confirm Password</label>
-                  <input type="password" name="pwd2" id="pwd2" />
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="last_name"
+                    maxlength="25"
+                    required
+                  />
+                  <span class="error"></span>
                 </div>
               </div>
-            </fieldset>
-            <fieldset>
-              <button>Create Account</button>
-              <p>Alredy have an account? <a href="#">Log in</a></p>
-            </fieldset>
+
+              <div class="form-field">
+                <div class="input-field">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" required />
+                  <span class="error"></span>
+                </div>
+                <div class="input-field">
+                  <label for="phone_number">Phone Number</label>
+                  <input
+                    type="text"
+                    name="phone_number"
+                    id="phone_number"
+                    placeholder="5541820221"
+                    maxlength="10"
+                    minlength="8"
+                    required
+                  />
+                  <span class="error"></span>
+                </div>
+              </div>
+
+              <div class="form-field">
+                <div class="input-field">
+                  <label for="pwd">Password</label>
+                  <input type="password" name="pwd" id="pwd" required />
+                  <span class="error"></span>
+                </div>
+                <div class="input-field">
+                  <label for="pwd2">Confirm Password</label>
+                  <input type="password" name="pwd2" id="pwd2" required />
+                  <span class="error"></span>
+                </div>
+              </div>
+            </div>
+            <div class="part-3">
+              <button type="submit" name="submit" class="btn">
+                Create Account
+              </button>
+              <p>
+                Alredy have an account? <a href="#" class="log-in">Log in</a>
+              </p>
+            </div>
           </form>
         </div>
       </div>
     </section>
+    <script>
+      const form = document.querySelector("form");
+      const fname = document.getElementById("first_name");
+      const lname = document.getElementById("last_name");
+      const email = document.getElementById("email");
+      const phoneNum = document.getElementById("phone_number");
+      const pwd = document.getElementById("pwd");
+      const pwd2 = document.getElementById("pwd2");
+      const btn = document.querySelector(".btn");
+
+      const emailRegex =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const phoneRegex = /[\d]+$/;
+      const pwdRegex =
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+      email.addEventListener("input", () => {
+        const emailValue = email.value.trim();
+        if (emailValue === "") {
+          email.className = "invalid";
+          email.nextElementSibling.textContent = "Email is required";
+        } else if (!emailRegex.test(emailValue)) {
+          email.className = "invalid";
+          email.nextElementSibling.textContent = "Email address not valid";
+        } else {
+          email.className = "valid";
+          email.nextElementSibling.textContent = "";
+          // email.nextElementSibling.className = "error";
+        }
+      });
+
+      fname.addEventListener("input", () => {
+        const fnameValue = fname.value.trim();
+        if (fnameValue === "") {
+          fname.className = "invalid";
+          fname.nextElementSibling.textContent = "First Name is required";
+        } else {
+          fname.className = "valid";
+          fname.nextElementSibling.textContent = "";
+        }
+      });
+
+      lname.addEventListener("input", () => {
+        const lnameValue = lname.value.trim();
+        if (lnameValue === "") {
+          lname.className = "invalid";
+          lname.nextElementSibling.textContent = "Last Name is required";
+        } else {
+          lname.className = "valid";
+          lname.nextElementSibling.textContent = "";
+        }
+      });
+
+      phoneNum.addEventListener("input", () => {
+        const phoneNumValue = phoneNum.value.trim();
+        if (phoneNumValue === "") {
+          phoneNum.className = "invalid";
+          phoneNum.nextElementSibling.textContent = "Phone Number is required";
+        } else if (!phoneRegex.test(phoneNumValue)) {
+          phoneNum.className = "invalid";
+          phoneNum.nextElementSibling.textContent =
+            "Phone Number must be numeric";
+        } else {
+          phoneNum.className = "valid";
+          phoneNum.nextElementSibling.textContent = "";
+        }
+      });
+
+      pwd.addEventListener("input", () => {
+        const pwdValue = pwd.value.trim();
+        if (pwdValue === "") {
+          pwd.className = "invalid";
+          pwd.nextElementSibling.textContent = "Password is required";
+        } else if (!pwdRegex.test(pwdValue)) {
+          pwd.className = "invalid";
+          pwd.nextElementSibling.textContent =
+            "Password must be minimum eight characters, at least one letter, one number and one special character";
+        } else {
+          pwd.className = "valid";
+          pwd.nextElementSibling.textContent = "";
+        }
+      });
+
+      pwd2.addEventListener("input", () => {
+        const pwd2Value = pwd2.value.trim();
+        if (pwd2Value === "") {
+          pwd2.className = "invalid";
+          pwd2.nextElementSibling.textContent = "Password is required";
+        } else if (pwd.value !== pwd2Value) {
+          pwd2.className = "invalid";
+          pwd2.nextElementSibling.textContent = "Password does not match";
+        } else {
+          pwd2.className = "valid";
+          pwd2.nextElementSibling.textContent = "";
+        }
+      });
+
+      btn.addEventListener("click", () => {
+        checkPassword(pwd.value, pwd2.value);
+      });
+
+      function checkPassword(pass1, pass2) {
+        if (pass1.value === pass2.value && pwdRegex.test(pass1.value)) {
+          btn.type = "submit";
+        } else {
+          btn.type = "button";
+        }
+      }
+    </script>
   </body>
 </html>
