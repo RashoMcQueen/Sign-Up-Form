@@ -12,11 +12,6 @@
 body {
   font-family: "Rubik", sans-serif;
   font-weight: 400;
-  /* display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; */
 }
 
 html {
@@ -25,7 +20,6 @@ html {
 
 .main {
   display: flex;
-  flex-wrap: wrap;
   height: 100vh;
 }
 
@@ -36,10 +30,10 @@ html {
   justify-content: space-between;
   align-items: center;
 
-  background-image: url(img/mona-eendra-vC8wj_Kphak-unsplash.jpg);
+  background-image: url(img/bg-img.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  width: 35%;
+  width: 40%;
 }
 
 .logo {
@@ -80,11 +74,130 @@ html {
 .right {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  background-color: rgba(241, 241, 241, 0.42);
+  width: 60%;
+}
+
+.part-1,
+.part-2,
+.part-3 {
+  padding-left: 40px;
+  height: 33.3%;
 }
 
 .part-1 {
-  background-color: rgba(242, 238, 240, 1);
-  height: 33.3%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   font-size: 1.75rem;
+  padding-top: 100px;
+}
+
+.part-1 p {
+  font-weight: 900;
+  font-size: 1.75rem;
+  margin-bottom: 30px;
+}
+
+.part-2 {
+  background-color: white;
+  box-shadow: inset 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
+.part-2 h2 {
+  padding: 15px 0;
+  font-size: 1.7rem;
+  color: #555;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.15rem;
+}
+
+.form-field {
+  display: flex;
+  gap: 60px;
+}
+
+input {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.part-3 {
+  font-size: 1.3rem;
+  padding-top: 20px;
+}
+
+.part-3 p {
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: rgb(4, 170, 109);
+  border: none;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Rubik";
+}
+
+.log-in:link,
+.log-in:visited {
+  color: rgb(4, 170, 109);
+}
+
+.log-in:hover,
+.log-in:active {
+  color: rgb(4, 170, 109);
+  font-weight: 900;
+}
+
+.btn:link,
+.btn:visited {
+  background-color: #026641;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #026641;
+}
+
+/* asdasd */
+.error {
+  width: 100%;
+  padding: 0;
+
+  font-size: 80%;
+  color: white;
+  background-color: #900;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+}
+
+.error.active {
+  padding: 0.3em;
+}
+
+/* This is our style for the invalid fields */
+input.invalid {
+  border-color: #900;
+  background-color: #fdd;
+}
+
+input:focus.invalid {
+  outline: none;
 }
